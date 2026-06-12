@@ -15,7 +15,7 @@ const IncidentSchema = new mongoose.Schema({
     },
     timestamp: {
         type: Date,
-        default: Date.now // Automatically logs the exact second the alert happened
+        default: Date.now 
     }
 });
 
