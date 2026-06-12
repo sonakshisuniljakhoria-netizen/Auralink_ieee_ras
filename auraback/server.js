@@ -1,48 +1,48 @@
+require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
-const cors = require('cors');
-require('dotenv').config(); 
+const connectDB = require('./db'); 
+const Incident = require('./models/Incident'); 
 
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+console.log("🔍 DIAGNOSTIC LOG -> MONGO_URI VALUE IS:", process.env.MONGO_URI);
+connectDB();
 app.use(express.json());
 
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID; 
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;   
-const TWILIO_PHONE_NUMBER = process.env.TWILIO_PHONE_NUMBER; 
+const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-
-const client = new twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
-
-app.post('/api/crisis', (req, res) => {
+app.post('/api/crisis', async (req, res) => {
     const { victimName, coordinates } = req.body;
-    
-    console.log(` EMERGENCY TRIGGERED BY: ${victimName}! `);
 
-const messageBody = `ALERT! ${victimName} has triggered a crisis mode. Last known location: https://www.google.com/maps?q=${coordinates.replace(/\s+/g, '')}`;    
-    client.messages.create({
-        body: messageBody,
-        from: TWILIO_PHONE_NUMBER,
-        to: process.env.EMERGENCY_CONTACT_NUMBER 
-    })
-    .then(message => {
-        console.log(`✉️ SMS successfully sent via Twilio! SID: ${message.sid}`);
+    try {
+        const newIncident = new Incident({
+            victimName,
+            coordinates
+        });
+        await newIncident.save(); 
+        console.log(` Incident permanently logged in MongoDB for: ${victimName}`);
+
+        const mapsUrl = `https://maps.google.com/?q=${coordinates}`;
+        const messageBody = ` EMERGENCY ALERT \n\n${victimName} is in danger! Live Campus Tracking Link: ${mapsUrl}`;
+
+        await client.messages.create({
+            body: messageBody,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: process.env.EMERGENCY_CONTACT_NUMBER
+        });
+
         res.status(200).json({ 
-            status: "Success", 
-            message: "SMS dispatched cleanly to emergency contacts!" 
+            success: true, 
+            message: "Incident logged and SMS dispatched successfully!",
+            databaseId: newIncident._id 
         });
-    })
-    .catch(error => {
-        console.error(" Twilio failed to send SMS:", error);
-        res.status(500).json({ 
-            status: "Error", 
-            message: "Failed to dispatch SMS text." 
-        });
-    });
+
+    } catch (error) {
+        console.error("Pipeline Error:", error);
+        res.status(500).json({ success: false, error: error.message });
+    }
 });
 
-app.listen(PORT, () => {
-    console.log(` Server is awake and running at http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server is awake and running at http://localhost:5000`));
