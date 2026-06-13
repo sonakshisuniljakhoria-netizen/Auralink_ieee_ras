@@ -1,14 +1,22 @@
 const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 
-const connectDB = async () => {
-    try {
-        // Reads your secret connection string from the .env file
-        await mongoose.connect(process.env.MONGO_URI);
-        console.log('🍃 MongoDB Atlas Cloud Connected Successfully!');
-    } catch (error) {
-        console.error('❌ Database connection failed:', error.message);
-        process.exit(1); // Stop the server if the database fails to connect
-    }
-};
+async function connectLocalDatabase() {
+  try {
+    
+    const mongoServer = await MongoMemoryServer.create();
+    const localUri = mongoServer.getUri();
 
-module.exports = connectDB;
+   
+    await mongoose.connect(localUri, {
+      dbName: "AuraLink"
+    });
+    
+    console.log("🟢 GENUINE LOCAL MONGODB ENGINE CONNECTED SUCCESSFULLY!");
+    console.log(`📌 Copy this link for Compass: ${localUri}AuraLink`);
+  } catch (error) {
+    console.error("❌ Local database failed to boot up:", error);
+  }
+}
+
+connectLocalDatabase();

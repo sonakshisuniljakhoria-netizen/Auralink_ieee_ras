@@ -1,14 +1,31 @@
 require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
-const connectDB = require('./db'); 
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 const Incident = require('./models/Incident'); 
 
 const app = express();
 const PORT = 5000;
 
-console.log("🔍 DIAGNOSTIC LOG -> MONGO_URI VALUE IS:", process.env.MONGO_URI);
-connectDB();
+async function bootLocalDatabaseEngine() {
+  try {
+    const mongoServer = await MongoMemoryServer.create();
+    const localUri = mongoServer.getUri();
+
+    await mongoose.connect(localUri, {
+      dbName: "AuraLink"
+    });
+    
+    console.log("🟢 GENUINE LOCAL MONGODB ENGINE CONNECTED SUCCESSFULLY!");
+    console.log(`📌 Copy this link for Compass: ${localUri}AuraLink`);
+  } catch (error) {
+    console.error("❌ Local database failed to boot up:", error);
+  }
+}
+
+bootLocalDatabaseEngine();
+
 app.use(express.json());
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
@@ -22,10 +39,10 @@ app.post('/api/crisis', async (req, res) => {
             coordinates
         });
         await newIncident.save(); 
-        console.log(` Incident permanently logged in MongoDB for: ${victimName}`);
+        console.log(`📝 Incident permanently logged in MongoDB for: ${victimName}`);
 
         const mapsUrl = `https://maps.google.com/?q=${coordinates}`;
-        const messageBody = ` EMERGENCY ALERT \n\n${victimName} is in danger! Live Campus Tracking Link: ${mapsUrl}`;
+        const messageBody = `🚨 EMERGENCY ALERT \n\n${victimName} is in danger! Live Campus Tracking Link: ${mapsUrl}`;
 
         await client.messages.create({
             body: messageBody,
