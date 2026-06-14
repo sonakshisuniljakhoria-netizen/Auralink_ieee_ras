@@ -20,10 +20,10 @@ async function bootLocalDatabaseEngine() {
       dbName: "AuraLink"
     });
     
-    console.log(" GENUINE LOCAL MONGODB ENGINE CONNECTED SUCCESSFULLY!");
-    console.log(`Copy this link for Compass: ${localUri}AuraLink`);
+    console.log("🟢 GENUINE LOCAL MONGODB ENGINE CONNECTED SUCCESSFULLY!");
+    console.log(`📌 Copy this link for Compass: ${localUri}AuraLink`);
   } catch (error) {
-    console.error(" Local database failed to boot up:", error);
+    console.error("Local database failed to boot up:", error);
   }
 }
 bootLocalDatabaseEngine();
@@ -41,7 +41,7 @@ app.post('/api/crisis', async (req, res) => {
         await newIncident.save(); 
         console.log(` ALERT START: Incident created for ${victimName} (ID: ${newIncident._id})`);
 
-        const messageBody =  'EMERGENCY ALERT \n\nAura Smart Ring has detected a distress trigger! Please open your security dashboard console immediately to monitor live telemetry tracking.`;
+        const messageBody = ` EMERGENCY ALERT \n\nAura Smart Ring has detected a distress trigger! Please open your security dashboard console immediately to monitor live telemetry tracking.`;
 
         await client.messages.create({
             body: messageBody,
