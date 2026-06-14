@@ -3,469 +3,569 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AuraLink - Obsidian Ethereal Prototype</title>
+<title>AuraLink | Regal Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "primary-container": "#00f0ff",
-                "on-background": "#e5e2e1",
-                "secondary-fixed": "#f8d8ff",
-                "on-primary": "#00363a",
-                "surface-container-high": "#2a2a2a",
-                "error": "#ffb4ab",
-                "on-surface-variant": "#b9cacb",
-                "surface-bright": "#3a3939",
-                "on-primary-container": "#006970",
-                "on-tertiary-fixed-variant": "#544600",
-                "on-secondary-fixed": "#320047",
-                "secondary": "#ecb2ff",
-                "on-tertiary": "#3a3000",
-                "on-error-container": "#ffdad6",
-                "surface-container-highest": "#353534",
-                "on-secondary-container": "#480063",
-                "inverse-primary": "#006970",
-                "surface-container-low": "#1c1b1b",
-                "surface-container": "#201f1f",
-                "outline": "#849495",
-                "surface-dim": "#131313",
-                "surface": "#131313",
-                "inverse-surface": "#e5e2e1",
-                "on-surface": "#e5e2e1",
-                "on-error": "#690005",
-                "primary-fixed": "#7df4ff",
-                "on-tertiary-fixed": "#221b00",
-                "primary-fixed-dim": "#00dbe9",
-                "on-secondary-fixed-variant": "#74009f",
-                "on-secondary": "#520071",
-                "tertiary-fixed-dim": "#e9c400",
-                "surface-container-lowest": "#0e0e0e",
-                "tertiary-container": "#ffd700",
-                "on-tertiary-container": "#705d00",
-                "on-primary-fixed-variant": "#004f54",
-                "background": "#131313",
-                "tertiary-fixed": "#ffe16d",
-                "surface-tint": "#00dbe9",
-                "tertiary": "#fff5de",
-                "secondary-container": "#cf5cff",
-                "outline-variant": "#3b494b",
-                "surface-variant": "#353534",
-                "inverse-on-surface": "#313030",
-                "on-primary-fixed": "#002022",
-                "error-container": "#93000a",
-                "primary": "#dbfcff",
-                "secondary-fixed-dim": "#ecb2ff"
-            },
-            "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-            },
-            "spacing": {
-                "unit": "8px",
-                "gutter": "24px",
-                "container-margin-mobile": "24px",
-                "container-margin-desktop": "80px",
-                "section-gap": "64px"
-            },
-            "fontFamily": {
-                "mono-data": ["Inter"],
-                "display-lg": ["Playfair Display"],
-                "headline-sm": ["Playfair Display"],
-                "body-lg": ["Inter"],
-                "headline-md": ["Playfair Display"],
-                "display-lg-mobile": ["Playfair Display"],
-                "body-md": ["Inter"],
-                "label-caps": ["Inter"]
-            },
-            "fontSize": {
-                "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#ecb2ff",
+            "outline": "#849495",
+            "tertiary": "#fff5de",
+            "on-primary": "#00363a",
+            "on-primary-fixed": "#002022",
+            "inverse-surface": "#e5e2e1",
+            "tertiary-fixed": "#ffe16d",
+            "surface-container-highest": "#353534",
+            "surface-container": "#201f1f",
+            "tertiary-fixed-dim": "#e9c400",
+            "surface-variant": "#353534",
+            "secondary": "#ecb2ff",
+            "on-tertiary-container": "#705d00",
+            "error": "#ffb4ab",
+            "error-container": "#93000a",
+            "on-secondary": "#520071",
+            "tertiary-container": "#ffd700",
+            "on-surface": "#e5e2e1",
+            "on-error": "#690005",
+            "secondary-fixed": "#f8d8ff",
+            "on-tertiary-fixed": "#221b00",
+            "on-background": "#e5e2e1",
+            "surface-dim": "#131313",
+            "outline-variant": "#3b494b",
+            "on-secondary-container": "#480063",
+            "on-primary-fixed-variant": "#004f54",
+            "background": "#131313",
+            "surface-container-lowest": "#0e0e0e",
+            "inverse-on-surface": "#313030",
+            "on-primary-container": "#006970",
+            "inverse-primary": "#006970",
+            "on-secondary-fixed-variant": "#74009f",
+            "on-secondary-fixed": "#320047",
+            "on-error-container": "#ffdad6",
+            "surface": "#131313",
+            "primary-container": "#00f0ff",
+            "on-tertiary-fixed-variant": "#544600",
+            "surface-container-high": "#2a2a2a",
+            "primary-fixed": "#7df4ff",
+            "primary": "#dbfcff",
+            "surface-bright": "#3a3939",
+            "secondary-container": "#cf5cff",
+            "primary-fixed-dim": "#00dbe9",
+            "on-tertiary": "#3a3000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-margin-mobile": "24px",
+            "unit": "8px",
+            "gutter": "24px",
+            "container-margin-desktop": "80px",
+            "section-gap": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "label-caps": ["Inter"],
+            "headline-sm": ["Playfair Display"],
+            "mono-data": ["Inter"],
+            "display-lg": ["Playfair Display"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Offset for top bar and spacing */
+    }
+
+    body {
+      background-color: #131313;
+      color: #e5e2e1;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 0.5px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(0, 219, 233, 0.3);
+      background: rgba(18, 18, 18, 0.9);
+    }
+
+    .pulse-cyan {
+      animation: pulse-cyan 2s infinite;
+    }
+
+    @keyframes pulse-cyan {
+      0% { box-shadow: 0 0 0 0 rgba(0, 219, 233, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 219, 233, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 219, 233, 0); }
+    }
+
+    .hotspot {
+      width: 12px;
+      height: 12px;
+      background: #00dbe9;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 10;
+    }
+
+    .hotspot::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 1px solid #00dbe9;
+      border-radius: 50%;
+      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes ping {
+      75%, 100% { transform: scale(2.5); opacity: 0; }
+    }
+
+    .sos-slider-track {
+      background: linear-gradient(to right, rgba(147, 0, 10, 0.1), rgba(147, 0, 10, 0.3));
+    }
+
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .nav-link.active {
+      background-color: rgba(0, 240, 255, 0.15);
+      color: #00dbe9;
+      font-weight: 700;
+    }
+    .nav-link.active span.material-symbols-outlined {
+      font-variation-settings: 'FILL' 1;
+      transform: scale(1.1);
+    }
+    
+    section {
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body class="font-body-md antialiased scroll-smooth">
+<!-- Immersive Background Shader -->
+<div class="fixed inset-0 z-0 pointer-events-none opacity-40">
+<canvas id="shader-canvas-ANIMATION_67" style="display:block;width:100%;height:100%"></canvas>
+<script>
+      (function() {
+        const canvas = document.getElementById('shader-canvas-ANIMATION_67');
+        function syncSize() {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          if (canvas.width !== w || canvas.height !== h) {
+            canvas.width  = w;
+            canvas.height = h;
           }
         }
-      }
+        window.addEventListener('resize', syncSize);
+        syncSize();
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (!gl) return;
+        const vs = `attribute vec2 a_position;varying vec2 v_texCoord;void main() {v_texCoord = a_position * 0.5 + 0.5;gl_Position = vec4(a_position, 0.0, 1.0);}`;
+        const fs = `precision highp float;uniform float u_time;uniform vec2 u_resolution;varying vec2 v_texCoord;void main() {vec2 uv = gl_FragCoord.xy / u_resolution.xy;float time = u_time * 0.15;vec2 p = -1.0 + 2.0 * uv;p.x *= u_resolution.x / u_resolution.y;float noise = sin(p.x * 2.0 + time) * cos(p.y * 2.0 - time);noise += 0.5 * sin(p.x * 4.0 - time * 1.2) * cos(p.y * 3.0 + time * 0.8);noise += 0.25 * sin(p.x * 8.0 + time * 0.5) * cos(p.y * 7.0 - time * 0.3);vec3 obsidian = vec3(0.074, 0.074, 0.074);vec3 auraCyan = vec3(0.0, 0.94, 1.0);vec3 templeGold = vec3(0.82, 0.67, 0.35);float layer1 = smoothstep(0.4, 0.8, 0.5 + 0.5 * sin(p.x * 1.5 + noise + time * 0.5));float layer2 = smoothstep(0.4, 0.8, 0.5 + 0.5 * cos(p.y * 1.8 - noise + time * 0.4));vec3 color = obsidian;color = mix(color, auraCyan, layer1 * 0.06);color = mix(color, templeGold, layer2 * 0.04);float d = length(p);color += auraCyan * (0.02 / (d + 0.5));float vignette = smoothstep(1.5, 0.5, length(p));color *= vignette;gl_FragColor = vec4(color, 1.0);}`;
+        function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+        const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
+        const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+        const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+        const uTime = gl.getUniformLocation(prog, 'u_time'); const uRes = gl.getUniformLocation(prog, 'u_resolution');
+        function render(t) { gl.viewport(0, 0, canvas.width, canvas.height); if (uTime) gl.uniform1f(uTime, t * 0.001); if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
+        render(0);
+      })();
     </script>
-<style>
-        body {
-            background-color: #0d0d0d;
-            color: #e5e2e1;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        .glass-card {
-            background: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(20px);
-            border: 0.5px solid rgba(255, 255, 255, 0.05);
-        }
-        .regal-card {
-            background: #131313;
-            border: 1px solid rgba(233, 196, 0, 0.15);
-            border-radius: 20px;
-        }
-        .luminous-cyan {
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-        }
-        .h-screen-mobile {
-            height: 100vh;
-            height: calc(var(--vh, 1vh) * 100);
-        }
-        .glow-cyan {
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-            border-color: rgba(0, 240, 255, 0.2) !important;
-        }
-        .schematic-hotspot {
-            position: absolute;
-            cursor: pointer;
-            z-index: 30;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hotspot-trigger {
-            width: 16px;
-            height: 16px;
-            background: rgba(0, 240, 255, 0.3);
-            border: 1px solid #00f0ff;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        .schematic-hotspot:hover .hotspot-trigger, .schematic-hotspot.active .hotspot-trigger {
-            background: #00f0ff;
-            box-shadow: 0 0 15px #00f0ff;
-            transform: scale(1.2);
-        }
-        .schematic-callout {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 40;
-            width: 160px;
-        }
-        .schematic-callout.active {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-        }
-        .callout-box {
-            background: rgba(19, 19, 19, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid #00f0ff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-        }
-        .label-glow {
-            color: #00f0ff;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            font-size: 10px;
-            margin-bottom: 2px;
-            text-transform: uppercase;
-        }
-        .detail-text {
-            color: #b9cacb;
-            font-size: 11px;
-            line-height: 1.3;
-        }
-        .regal-gold-text {
-            color: #e9c400;
-        }
-        .regal-gold-bg {
-            background: #e9c400;
-        }
-        .bar-chart-container {
-            display: flex;
-            align-items: flex-end;
-            gap: 6px;
-            height: 60px;
-        }
-        .bar {
-            background: rgba(233, 196, 0, 0.2);
-            width: 100%;
-            border-radius: 2px;
-            transition: height 0.5s ease;
-        }
-        .bar-active {
-            background: #e9c400;
-        }
-        .google-map-dark {
-            filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
-        }
-    </style>
-</head>
-<body class="dark bg-background text-on-background">
-<!-- Top App Bar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-container-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-fixed-dim">diamond</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-headline-sm" style="font-variation-settings: 'FILL' 1;">diamond</span>
 <h1 class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary-fixed-dim">AuraLink</h1>
 </div>
-<div class="flex items-center gap-3">
-<button class="material-symbols-outlined text-on-surface-variant">notifications</button>
-<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary-fixed-dim/30 flex items-center justify-center overflow-hidden">
-<span class="text-label-caps font-label-caps text-primary-fixed-dim">U1</span>
-</div>
-</div>
 </header>
-<!-- Main Content Canvas -->
-<main class="pt-20 pb-24 px-6 max-w-md mx-auto min-h-screen">
-<!-- View: Regal Digital Twin (Home Tab) -->
-<section class="space-y-6 animate-in fade-in duration-700" id="view-twin">
-<div class="mb-2">
-<h2 class="text-headline-md font-headline-md text-on-surface">Regal Dashboard</h2>
-<p class="text-body-md text-on-surface-variant">Curating your aesthetic presence and ensuring absolute safety.</p>
-</div>
-<!-- Node Status Card -->
-<div class="regal-card p-5 space-y-4">
-<div class="flex justify-between items-center">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined regal-gold-text text-xl">shield</span>
-<span class="text-label-caps font-bold text-on-surface uppercase tracking-wider">Node Status</span>
-</div>
-<span class="text-label-caps regal-gold-text font-bold">88% POWER</span>
-</div>
-<div class="space-y-2">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full regal-gold-bg"></span>
-<p class="text-body-md font-medium text-on-surface">Varanasi Hub: Encrypted</p>
-</div>
-<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
-<div class="regal-gold-bg h-full" style="width: 88%;"></div>
-</div>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Last Checked: 2 Mins Ago</p>
+<main class="relative z-10 pt-24 pb-32 px-6 md:px-container-margin-desktop max-w-7xl mx-auto space-y-section-gap">
+<!-- Section: Twin (Regal Dashboard) -->
+<section class="scroll-mt-32 pt-8" id="twin">
+<div class="flex flex-col items-center mb-12 text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Regal Dashboard</h2>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-caps text-label-caps tracking-widest uppercase">
+<span>Identity: User 1</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+<span>Status: Secure</span>
 </div>
 </div>
-<!-- Interactive 3D Schematic Wrapper -->
-<div class="relative w-full aspect-square flex flex-col items-center justify-center overflow-hidden rounded-[32px] glass-card glow-cyan border border-primary-fixed-dim/10" id="schematic-container">
-<div class="absolute inset-0 bg-gradient-to-b from-primary-fixed-dim/5 to-transparent pointer-events-none"></div>
-<div class="relative w-full h-full flex items-center justify-center z-10 p-6">
-<img alt="Technical Schematic of Aura Smart Ring" class="w-full h-full object-contain pointer-events-none drop-shadow-[0_0_40px_rgba(0,219,233,0.15)]" src="https://lh3.googleusercontent.com/aida/AP1WRLtmZHA8p50FAX7rf-dXejNOBdm_Nmf3U5k-_kM4nxz-L6wdqNG9__XRXoEObzlMQRPgTeKXgpLxt-j7ccLmtP3jZ-ZmeXP-uuwC4YEVUQjmTwvX0V24KexNV1z9C_bADq4sUmix3b-INnp1C2p-4C7d1PiXX1i3DOd-t5M6fXA8uWYJeHrvIPIIn9corabOBtOjE-ZjT2c2VE3XXskhhTu6c8ewc4oZ20tZ7PDo0gMPiorTLFtNvp4AsQ"/>
-<!-- Hotspots remain the same -->
-<div class="schematic-hotspot" data-target="shielding" onclick="toggleHotspot('shielding')" style="top: 29%; left: 21%; width: 40px; height: 40px;">
-<div class="hotspot-trigger"></div>
-<div class="schematic-callout" data-for="shielding" style="top: 10%; left: -10%;">
-<div class="callout-box">
-<div class="label-glow">Shielding Layer</div>
-<div class="detail-text">Aerospace-grade Temple Gold. 100% EM protection.</div>
+<div class="glass-card rounded-3xl p-8 relative min-h-[500px] overflow-hidden flex flex-col items-center justify-center">
+<div class="absolute top-6 left-8">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-[0.2em]">Digital Twin Blueprint</span>
+</div>
+<div class="relative w-full max-w-lg aspect-square flex items-center justify-center">
+<img alt="AuraLink Smart Ring Schematic" class="w-full h-full object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/AP1WRLsDsW7DQqfEnouH692CdXtorcTFp86lE4j-_O7JxAYj9Wf-ii27SuHxs7zZDx7eYTGCdJ3xAVMBFNsEmsDTVEa-PeB8LE8Hmy04iRWo4NqNfwElbCYoxRQJ8Zo43u3VPJs8uCofVYam6eT7GVU59tKWVT8glqgJU-KxVDkjjiG2w_wVQarUobtwWxqcyaIKQEmBTVCPAyoxshOZMcrrr-x5SBO2KzIQ9fKa2UrwkAjbGmePovWyoxZrOg"/>
+<!-- Interactive Hotspots -->
+<div class="hotspot group" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
+<span class="text-label-caps font-label-caps text-primary-fixed-dim">Biometric Core</span>
 </div>
 </div>
-</div>
-<div class="schematic-hotspot" data-target="sensors" onclick="toggleHotspot('sensors')" style="top: 15%; left: 58%; width: 40px; height: 40px;">
-<div class="hotspot-trigger"></div>
-<div class="schematic-callout" data-for="sensors" style="top: -60px; right: -20px;">
-<div class="callout-box">
-<div class="label-glow">Micro-Sensors</div>
-<div class="detail-text">Nanoscale arrays monitoring biometric resonance 24/7.</div>
+<div class="hotspot group" style="top: 32%; right: 28%;">
+<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
+<span class="text-label-caps font-label-caps text-primary-fixed-dim">Encapsulated Antenna</span>
 </div>
 </div>
-</div>
-<div class="schematic-hotspot" data-target="core" onclick="toggleHotspot('core')" style="top: 48%; left: 48%; width: 50px; height: 50px; transform: translate(-50%, -50%);">
-<div class="absolute inset-0 bg-primary-fixed-dim/20 rounded-full animate-pulse"></div>
-<div class="hotspot-trigger"></div>
-<div class="schematic-callout" data-for="core" style="top: 60px; left: -40px;">
-<div class="callout-box">
-<div class="label-glow">Biometric Core</div>
-<div class="detail-text">Encrypts unique auraID at 432.1 Hz.</div>
+<div class="hotspot group" style="bottom: 30%; left: 22%;">
+<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
+<span class="text-label-caps font-label-caps text-primary-fixed-dim">Shielding Layer</span>
 </div>
 </div>
 </div>
 </div>
-<div class="absolute bottom-4 w-full text-center">
-<p class="text-label-caps regal-gold-text tracking-[0.2em] font-bold">ROYAL ENSEMBLE PRIMED</p>
+<!-- Vital Harmony Sub-section -->
+<div class="glass-card rounded-3xl p-8 mt-12" id="vitals">
+<div class="flex justify-between items-center mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">pulse</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Vital Harmony</h3>
+</div>
+<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-widest bg-tertiary-container/10 px-3 py-1 rounded-full border border-tertiary-fixed-dim/20">Syncing Live</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Heart Rate -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Heart Rate</p>
+<span class="material-symbols-outlined text-error pulse-cyan text-sm">favorite</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline-md text-headline-md text-on-surface">72</p>
+<p class="text-label-caps text-on-surface-variant">BPM</p>
+</div>
+<div class="h-16 flex items-end gap-1.5" id="heart-chart">
+<div class="flex-1 bg-error/30 rounded-full h-[40%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/40 rounded-full h-[60%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/30 rounded-full h-[45%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/60 rounded-full h-[80%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/30 rounded-full h-[50%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/40 rounded-full h-[65%] transition-all duration-1000"></div>
+<div class="flex-1 bg-error/50 rounded-full h-[70%] transition-all duration-1000"></div>
 </div>
 </div>
-<!-- Vital Harmony Chart Section -->
-<div class="regal-card p-5 space-y-4">
-<div class="flex justify-between items-center">
-<span class="text-label-caps font-bold text-on-surface uppercase tracking-wider">Vital Harmony</span>
-<span class="text-label-caps regal-gold-text font-bold">SERENE</span>
+<!-- Stress Index -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Stress Index</p>
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">psychology</span>
 </div>
-<div class="bar-chart-container">
-<div class="bar" style="height: 30%"></div>
-<div class="bar" style="height: 50%"></div>
-<div class="bar" style="height: 20%"></div>
-<div class="bar bar-active" style="height: 90%"></div>
-<div class="bar" style="height: 40%"></div>
-<div class="bar bar-active" style="height: 70%"></div>
-<div class="bar" style="height: 35%"></div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline-md text-headline-md text-on-surface">Low</p>
+<p class="text-label-caps text-on-surface-variant">Normal</p>
 </div>
-<div class="grid grid-cols-2 gap-4 pt-2">
-<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low border border-white/5">
-<span class="material-symbols-outlined regal-gold-text mb-1">favorite</span>
-<p class="text-headline-sm font-bold">72</p>
-<p class="text-[10px] text-on-surface-variant uppercase">Heart Rate</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-auto relative">
+<div class="absolute left-0 top-0 h-full w-[14%] bg-primary-fixed-dim rounded-full shadow-[0_0_10px_#00dbe9]"></div>
 </div>
-<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low border border-white/5">
-<span class="material-symbols-outlined regal-gold-text mb-1">air</span>
-<p class="text-headline-sm font-bold">99%</p>
-<p class="text-[10px] text-on-surface-variant uppercase">Vitality</p>
+<p class="text-mono-data text-on-surface-variant text-xs">Baseline: 14/100</p>
+</div>
+<!-- SpO2 -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">SpO2</p>
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">air</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline-md text-headline-md text-on-surface">99</p>
+<p class="text-label-caps text-on-surface-variant">%</p>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-auto relative">
+<div class="absolute left-0 top-0 h-full w-[99%] bg-tertiary-fixed-dim rounded-full shadow-[0_0_10px_#ffe16d]"></div>
+</div>
+<p class="text-mono-data text-on-surface-variant text-xs">Oxygen Saturation: Optimal</p>
 </div>
 </div>
 </div>
 </section>
-<!-- View: Stylist Tab -->
-<section class="hidden space-y-8 animate-in fade-in duration-500" id="view-stylist"><h2 class="text-headline-md font-headline-md text-primary-fixed-dim">AI Stylist</h2><div class="space-y-4"><button class="w-full glass-card p-6 rounded-xl flex items-center justify-between group border-primary-fixed-dim/20"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center border border-regal-gold-bg/30"><span class="material-symbols-outlined regal-gold-text">add_a_photo</span></div><span class="font-body-lg text-body-lg">Upload Outfit Photo</span></div><span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span></button><button class="w-full glass-card p-6 rounded-xl flex items-center justify-between group border-primary-fixed-dim/20"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center border border-regal-gold-bg/30"><span class="material-symbols-outlined regal-gold-text">calendar_today</span></div><span class="font-body-lg text-body-lg">Sync Calendar</span></div><span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span></button></div><div class="regal-card p-5 space-y-4"><div class="flex items-center gap-2"><span class="material-symbols-outlined regal-gold-text">auto_awesome</span><span class="text-label-caps font-bold">CURATED RECOMMENDATION</span></div><h3 class="text-body-lg font-bold">Evening Gala Ensemble</h3><p class="text-body-md text-on-surface-variant">Based on your upcoming schedule and current wardrobe inventory.</p><div class="inline-block px-3 py-1 bg-tertiary-container/10 border border-tertiary-container/30 rounded-full"><span class="text-[10px] regal-gold-text font-bold uppercase">Ready for Review</span></div></div></section>
-<!-- View: Guardian Tab -->
-<section class="hidden space-y-8 animate-in fade-in duration-500" id="view-guardian">
-<div class="flex justify-between items-center">
-<h2 class="text-headline-md font-headline-md text-primary-fixed-dim">Guardian Hub</h2>
-<div class="flex items-center gap-2 text-primary-fixed-dim bg-primary-container/10 px-3 py-1 rounded-full">
-<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-<span class="text-label-caps font-label-caps">Secure</span>
-</div><div class="flex items-center gap-2 text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full"><span class="material-symbols-outlined text-xs">sensors</span><span class="text-label-caps font-label-caps">Live: Encrypted Connection Active</span></div>
+<!-- Section: Stylist -->
+<section class="scroll-mt-32 pt-8" id="stylist">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">flare</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">AI Stylist</h3>
 </div>
-<div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/5 mb-4"><div class="absolute inset-0 bg-surface-container-lowest"><iframe class="w-full h-full border-0 google-map-dark" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14008.114827110415!2d77.2090212!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"></iframe></div><div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none"></div><div class="absolute bottom-3 left-3 right-3 flex flex-col gap-2"><div class="px-3 py-1.5 glass-card rounded-lg border border-primary-fixed-dim/20 flex items-center justify-between"><span class="text-[10px] font-bold uppercase tracking-wider">G1 Proximity</span><span class="text-[10px] regal-gold-text font-bold">340m</span></div><div class="px-3 py-1.5 glass-card rounded-lg border border-primary-fixed-dim/20 flex items-center justify-between"><span class="text-[10px] font-bold uppercase tracking-wider">G2 Proximity</span><span class="text-[10px] regal-gold-text font-bold">1.2km</span></div></div></div><div class="space-y-4"><div class="text-label-caps font-bold text-on-surface-variant mb-2 uppercase tracking-widest">Active Guardians</div><div class="regal-card p-5 flex items-center justify-between mb-3"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-white/10"><span class="material-symbols-outlined text-on-surface-variant">person</span></div><div><p class="font-bold text-on-surface">Guardian 1</p><p class="text-xs text-on-surface-variant">Active - Within 500m</p></div></div><span class="text-label-caps font-bold regal-gold-text">Trusted</span></div><div class="regal-card p-5 flex items-center justify-between"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-white/10"><span class="material-symbols-outlined text-on-surface-variant">person</span></div><div><p class="font-bold text-on-surface">Guardian 2</p><p class="text-xs text-on-surface-variant">Active - Within 1.5km</p></div></div><span class="text-label-caps font-bold text-on-surface-variant">Standby</span></div></div>
-<div class="pt-8">
-<button class="w-full h-16 bg-error-container text-on-error-container font-headline-sm rounded-full shadow-[0_0_30px_rgba(147,0,10,0.4)] flex items-center justify-center gap-3 active:scale-95 transition-transform">
-<span class="material-symbols-outlined">emergency</span>
-<span>SLIDE FOR SOS</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-secondary/10 min-h-[300px]">
+<div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:bg-secondary-container/40 transition-all">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-5xl">add_a_photo</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim tracking-widest text-lg">Upload Outfit</span>
+</button>
+<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-primary-fixed-dim/10 min-h-[300px]">
+<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 group-hover:bg-primary-container/40 transition-all">
+<span class="material-symbols-outlined text-primary-fixed-dim text-5xl">event_available</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed-dim tracking-widest text-lg">Sync Calendar</span>
 </button>
 </div>
+</div>
 </section>
-<!-- View: Track Tab (Updated with Dark Map) -->
-<section class="hidden space-y-6 animate-in fade-in duration-500 h-full" id="view-track">
-<h2 class="text-headline-md font-headline-md text-primary-fixed-dim">Live Tracking</h2>
-<div class="relative w-full aspect-[4/5] rounded-[32px] overflow-hidden border border-white/5 shadow-2xl">
-<!-- Simulated Google Maps View with Dark Filter -->
-<div class="absolute inset-0 bg-surface-container-lowest">
-<iframe allowfullscreen="" class="w-full h-full border-0 google-map-dark" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14008.114827110415!2d77.2090212!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin">
-</iframe>
+<!-- Section: Guardian (Network) -->
+<section class="scroll-mt-32 pt-8" id="guardian">
+<div class="flex flex-col">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">gpp_good</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Guardian Network</h3>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-2xl border border-white/5">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs text-on-surface-variant font-bold uppercase">G1</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Guardian 1</span>
+<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-widest">Active</span>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-2xl border border-white/5">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs text-on-surface-variant font-bold uppercase">G2</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Guardian 2</span>
+<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-widest">Active</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border-2 border-background bg-primary-container/30 flex items-center justify-center text-label-caps text-primary font-bold hover:bg-primary-container/50 transition-all">+</button>
+</div>
+</div>
+<div class="glass-card rounded-3xl overflow-hidden h-[500px] relative group border border-primary-fixed-dim/10 shadow-[0_0_30px_rgba(0,219,233,0.1)]">
+<!-- High-Fidelity Map Background -->
+<div class="absolute inset-0 bg-[#0e0e0e]">
+<div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, #3b494b 1px, transparent 0); background-size: 24px 24px;"></div>
+<img alt="Luxury Map Interface" class="w-full h-full object-cover grayscale brightness-[0.2] contrast-150 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV_OZ6U3U2RW6KTPk53eZarhYv6_yvHA0qJahGYZItt0kXkcL0dAQv9NYgHcbIxnpawqPIENUCtZcIug2RN2VOmakQSgfRJofRMxGOhxOBBnIwAlgCsqcg8AG_5RfFR-yuZj2o4J2nwDgisNnpEoguEuColdwyRVV6gkgUzNQ2sbQlugeMzHAlk6eI9HBLrEfTnzf8JtvOaqOWKazeaIkG6jpR4CHDMuoJW3VPpPxjuFZIzpXJOz8NYCnCeYx9fx4qHxu5SXSNoXE"/>
+</div>
+<!-- Secure Perimeter Visualization -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-96 h-96 rounded-full border border-primary-fixed-dim/20 bg-primary-fixed-dim/5 animate-[pulse_4s_infinite] flex items-center justify-center">
+<div class="w-72 h-72 rounded-full border border-primary-fixed-dim/10"></div>
+</div>
+</div>
+<!-- Glowing User Location Marker -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<span class="absolute -inset-8 bg-primary-fixed-dim/30 rounded-full animate-ping duration-1000"></span>
+<span class="absolute -inset-4 bg-primary-fixed-dim/40 rounded-full animate-pulse"></span>
+<div class="w-8 h-8 bg-primary-fixed-dim rounded-full relative shadow-[0_0_25px_#00dbe9] border-2 border-white/20"></div>
+</div>
 </div>
 <!-- Map Overlays -->
-<div class="absolute inset-0 pointer-events-none p-6">
-<!-- User 1 Marker -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
-<div class="relative flex flex-col items-center">
-<div class="w-10 h-10 rounded-full border-2 border-primary-fixed-dim bg-surface overflow-hidden shadow-[0_0_15px_rgba(0,219,233,0.5)]">
-<div class="w-full h-full flex items-center justify-center text-primary-fixed-dim text-[10px] font-bold">U1</div>
-</div>
-<div class="mt-1 px-2 py-0.5 bg-surface/90 backdrop-blur rounded-full border border-primary-fixed-dim/30">
-<span class="text-[10px] text-primary-fixed-dim font-bold">User 1 (You)</span>
+<div class="absolute top-6 left-6">
+<div class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-base">my_location</span>
+<span class="text-label-caps font-label-caps text-on-surface text-[10px] tracking-widest">LIVE TRACKING</span>
 </div>
 </div>
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="px-5 py-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4 shadow-2xl">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim pulse-cyan"></span>
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant font-label-caps uppercase tracking-tighter">Current Sector</span>
+<span class="text-sm font-headline-sm text-on-surface">Bandra West • Mumbai</span>
 </div>
-<!-- Guardian 1 Marker -->
-<div class="absolute top-1/3 left-1/3 pointer-events-auto">
-<div class="relative flex flex-col items-center">
-<div class="w-8 h-8 rounded-full border-2 border-regal-gold-bg bg-surface overflow-hidden shadow-[0_0_10px_rgba(233,196,0,0.3)]">
-<div class="w-full h-full flex items-center justify-center bg-surface text-on-surface-variant text-[8px]">G1</div>
 </div>
-<div class="mt-1 px-2 py-0.5 bg-surface/90 backdrop-blur rounded-full border border-white/10">
-<span class="text-[10px] text-on-surface font-bold">Guardian 1</span>
+<div class="hidden sm:flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G1</div>
+<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G2</div>
 </div>
 </div>
 </div>
-<!-- Map Controls -->
-<div class="absolute bottom-6 right-6 flex flex-col gap-3 pointer-events-auto">
-<button class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-primary-fixed-dim border border-white/10">
-<span class="material-symbols-outlined">my_location</span>
-</button>
-<button class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-on-surface-variant border border-white/10">
-<span class="material-symbols-outlined">layers</span>
-</button>
+</div>
+</section>
+<!-- Section: Track (Safety) -->
+<section class="scroll-mt-32 pt-8 mb-12" id="track">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Security &amp; SOS</h3>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="glass-card rounded-full p-2 h-20 flex items-center relative overflow-hidden sos-slider-track border border-error/20" id="sos-slider-container">
+<div class="absolute left-0 top-0 bottom-0 bg-error/20 w-0 pointer-events-none transition-all duration-75" id="sos-progress"></div>
+<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center cursor-grab active:cursor-grabbing z-20 shadow-2xl pulse-cyan" id="sos-handle">
+<span class="material-symbols-outlined text-2xl font-bold">keyboard_double_arrow_right</span>
+</div>
+<div class="flex-1 text-center pointer-events-none pr-10">
+<span class="text-label-caps font-label-caps text-error tracking-[0.3em] uppercase text-[10px] font-bold">Slide for Silent SOS Protocol</span>
 </div>
 </div>
-<!-- Perimeter Status -->
-<div class="absolute top-6 left-6 right-6 flex justify-between items-center pointer-events-none">
-<div class="px-4 py-2 glass-card rounded-full border border-primary-fixed-dim/20 pointer-events-auto flex items-center gap-2">
-<span class="w-2 h-2 rounded-full regal-gold-bg animate-pulse"></span>
-<span class="text-[10px] font-bold tracking-widest uppercase">Perimeter Secure</span>
-</div>
-</div>
-</div>
-<div class="regal-card p-5 space-y-2">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-on-surface-variant text-lg">history</span>
-<span class="text-label-caps font-bold uppercase">Security Trail</span>
-</div>
-<div class="pl-4 border-l-2 border-regal-gold-bg/30">
-<p class="font-bold text-on-surface">Secure Perimeter Maintained</p>
-<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Today, 18:42 • South Delhi Residency</p>
-</div>
+<p class="text-center mt-8 text-on-surface-variant font-body-md max-w-lg mx-auto leading-relaxed text-sm">
+          Engagement of the SOS Protocol will notify all Guardians immediately and initiate high-fidelity audio/visual distress logging.
+        </p>
 </div>
 </section>
 </main>
-<!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface/90 backdrop-blur-2xl border-t border-white/5 rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
-<button class="flex flex-col items-center justify-center text-primary-fixed-dim font-bold transition-all px-4 py-1 rounded-xl bg-primary-fixed-dim/10" id="btn-twin" onclick="switchTab('twin', this)">
-<span class="material-symbols-outlined text-2xl">grid_view</span>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-tighter">Twin</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant transition-all" id="btn-stylist" onclick="switchTab('stylist', this)">
-<span class="material-symbols-outlined text-2xl">auto_awesome</span>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-tighter">Stylist</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant transition-all" id="btn-guardian" onclick="switchTab('guardian', this)">
-<span class="material-symbols-outlined text-2xl">security</span>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-tighter">Guardian</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant transition-all" id="btn-track" onclick="switchTab('track', this)">
-<span class="material-symbols-outlined text-2xl">location_on</span>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-tighter">Track</span>
-</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="nav-link active flex flex-col items-center justify-center text-on-surface-variant rounded-2xl px-6 py-2.5 transition-all cursor-pointer" data-nav="twin" href="#twin">
+<span class="material-symbols-outlined">language</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Twin</span>
+</a>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="stylist" href="#stylist">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Stylist</span>
+</a>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="guardian" href="#guardian">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">security</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Guardian</span>
+</a>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="track" href="#track">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">location_on</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Track</span>
+</a>
 </nav>
 <script>
-    function switchTab(tabId, element) {
-        const sections = ['view-twin', 'view-stylist', 'view-guardian', 'view-track'];
-        sections.forEach(id => {
-            document.getElementById(id).classList.add('hidden');
-        });
+    // Navigation Highlighting and Smooth Scrolling Logic
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-        document.getElementById(`view-${tabId}`).classList.remove('hidden');
+    // Smooth Scroll Helper with Regal Easing
+    function scrollToSection(id) {
+      const target = document.querySelector(id);
+      if (!target) return;
+      
+      const offset = 80; // Alignment offset
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = target.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
 
-        const navButtons = document.querySelectorAll('nav button');
-        navButtons.forEach(btn => {
-            btn.className = "flex flex-col items-center justify-center text-on-surface-variant transition-all";
-            btn.classList.remove('bg-primary-fixed-dim/10', 'text-primary-fixed-dim', 'font-bold');
-        });
-
-        element.className = "flex flex-col items-center justify-center text-primary-fixed-dim font-bold transition-all px-4 py-1 rounded-xl bg-primary-fixed-dim/10";
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
 
-    function toggleHotspot(id) {
-        const allHotspots = document.querySelectorAll('.schematic-hotspot');
-        const allCallouts = document.querySelectorAll('.schematic-callout');
-        const currentHotspot = document.querySelector(`[data-target="${id}"]`);
-        const currentCallout = document.querySelector(`[data-for="${id}"]`);
-        const isActive = currentHotspot.classList.contains('active');
-        allHotspots.forEach(h => h.classList.remove('active'));
-        allCallouts.forEach(c => c.classList.remove('active'));
-        if (!isActive) {
-            currentHotspot.classList.add('active');
-            currentCallout.classList.add('active');
+    // Attach click events to nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        scrollToSection(targetId);
+      });
+    });
+
+    // Intersection Observer for highlighting nav items
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -70% 0px', // Trigger when section is near the top
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
         }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Heart Rate Pulse Animation Logic
+    setInterval(() => {
+      const heartChart = document.getElementById('heart-chart');
+      if (!heartChart) return;
+      const bars = heartChart.querySelectorAll('div');
+      bars.forEach(bar => {
+        const height = Math.floor(Math.random() * 50) + 30;
+        bar.style.height = `${height}%`;
+      });
+    }, 1000);
+
+    // SOS Slider Logic
+    const handle = document.getElementById('sos-handle');
+    const container = document.getElementById('sos-slider-container');
+    const progress = document.getElementById('sos-progress');
+    let isDragging = false;
+    let startX = 0;
+    
+    const startDrag = (e) => {
+      isDragging = true;
+      startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      handle.style.transition = 'none';
+    };
+
+    const onDrag = (e) => {
+      if (!isDragging) return;
+      const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const rect = container.getBoundingClientRect();
+      const maxTranslate = rect.width - handle.offsetWidth - 16; 
+      let diff = currentX - startX;
+      
+      diff = Math.max(0, Math.min(diff, maxTranslate));
+      handle.style.transform = `translateX(${diff}px)`;
+      progress.style.width = `${(diff / maxTranslate) * 100}%`;
+
+      if (diff >= maxTranslate - 2) {
+        triggerSOS();
+      }
+    };
+
+    const endDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      handle.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      progress.style.transition = 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      handle.style.transform = 'translateX(0)';
+      progress.style.width = '0';
+      setTimeout(() => {
+        progress.style.transition = 'none';
+      }, 500);
+    };
+
+    function triggerSOS() {
+      if (!isDragging) return;
+      isDragging = false;
+      alert('SILENT SOS PROTOCOL ENGAGED: Guardians notified. Real-time audio streaming active.');
+      handle.style.transform = 'translateX(0)';
+      progress.style.width = '0';
     }
 
-    document.getElementById('schematic-container').addEventListener('click', (e) => {
-        if (e.target.id === 'schematic-container' || e.target.tagName === 'IMG') {
-            document.querySelectorAll('.schematic-hotspot').forEach(h => h.classList.remove('active'));
-            document.querySelectorAll('.schematic-callout').forEach(c => c.classList.remove('active'));
-        }
-    });
-
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    window.addEventListener('resize', () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-</script>
+    if (handle && container) {
+      handle.addEventListener('mousedown', startDrag);
+      handle.addEventListener('touchstart', startDrag);
+      window.addEventListener('mousemove', onDrag);
+      window.addEventListener('touchmove', onDrag);
+      window.addEventListener('mouseup', endDrag);
+      window.addEventListener('touchend', endDrag);
+    }
+  </script>
 </body></html>
