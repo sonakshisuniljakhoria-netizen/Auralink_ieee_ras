@@ -5,10 +5,7 @@ const IncidentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    coordinates: {
-        type: String,
-        required: true
-    },
+    coordinates: [{ type: String }], 
     status: {
         type: String,
         default: 'Active/Dispatched'

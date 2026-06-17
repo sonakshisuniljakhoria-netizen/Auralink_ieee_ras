@@ -63,20 +63,20 @@ app.patch('/api/crisis/:id/location', async (req, res) => {
     const { coordinates } = req.body;
 
     try {
-        const updatedIncident = await Incident.findByIdAndUpdate(
-            id,
-            { coordinates },
-            { new: true }
-        );
+    const updatedIncident = await Incident.findByIdAndUpdate(
+        id,
+        { $push: { coordinates: coordinates } },
+        { new: true }
+    );
 
-        if (!updatedIncident) {
-            return res.status(404).json({ success: false, message: "Incident record not found" });
-        }
+    if (!updatedIncident) {
+        return res.status(404).json({ success: false, message: "Incident record not found" });
+    }
 
-        console.log(`📡 RING TELEMETRY RECOVERY: ID ${id} location updated to [${coordinates}]`);
-        res.status(200).json({ success: true, updatedIncident });
-
-    } catch (error) {
+    console.log(`📡 RING TELEMETRY RECOVERY: ID ${id} added step [${coordinates}] to path.`);
+    res.status(200).json({ success: true, updatedIncident });
+ }
+  catch (error) {
         console.error("PATCH Pipeline Error:", error);
         res.status(500).json({ success: false, error: error.message });
     }
