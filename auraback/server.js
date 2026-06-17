@@ -2,13 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const Incident = require('./models/Incident'); 
 
 const app = express();
 const PORT = 5000;
-
+app.use(cors());
 app.use(express.json());
 
 async function bootLocalDatabaseEngine() {
