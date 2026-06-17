@@ -3,7 +3,6 @@ const express = require('express');
 const twilio = require('twilio');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const Incident = require('./models/Incident'); 
 
@@ -13,18 +12,15 @@ app.use(cors());
 app.use(express.json());
 
 async function bootLocalDatabaseEngine() {
-  try {
-    const mongoServer = await MongoMemoryServer.create();
-    const localUri = mongoServer.getUri();
+ try {
+    const permanentConnectionString = 'mongodb://127.0.0.1:27017/AuraLink';
 
-    await mongoose.connect(localUri, {
-      dbName: "AuraLink"
-    });
+    await mongoose.connect(permanentConnectionString);
     
-    console.log("🟢 GENUINE LOCAL MONGODB ENGINE CONNECTED SUCCESSFULLY!");
-    console.log(`📌 Copy this link for Compass: ${localUri}AuraLink`);
+    console.log("🟢 PERMANENT LOCAL MONGODB CONNECTED SUCCESSFULLY!");
+    console.log(`📌 Target Database Instance: AuraLink`);
   } catch (error) {
-    console.error("Local database failed to boot up:", error);
+    console.error("❌ Permanent database connection failed to initialize:", error);
   }
 }
 bootLocalDatabaseEngine();
