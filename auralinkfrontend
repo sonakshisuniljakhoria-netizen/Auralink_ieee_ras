@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>AuraLink | Regal Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           "colors": {
+            "surface": "#131313",
             "secondary-fixed-dim": "#ecb2ff",
-            "outline": "#849495",
-            "tertiary": "#fff5de",
-            "on-primary": "#00363a",
-            "on-primary-fixed": "#002022",
-            "inverse-surface": "#e5e2e1",
-            "tertiary-fixed": "#ffe16d",
-            "surface-container-highest": "#353534",
-            "surface-container": "#201f1f",
-            "tertiary-fixed-dim": "#e9c400",
-            "surface-variant": "#353534",
+            "on-secondary-fixed": "#320047",
             "secondary": "#ecb2ff",
-            "on-tertiary-container": "#705d00",
-            "error": "#ffb4ab",
-            "error-container": "#93000a",
-            "on-secondary": "#520071",
-            "tertiary-container": "#ffd700",
-            "on-surface": "#e5e2e1",
-            "on-error": "#690005",
-            "secondary-fixed": "#f8d8ff",
-            "on-tertiary-fixed": "#221b00",
+            "on-tertiary-fixed-variant": "#544600",
+            "inverse-surface": "#e5e2e1",
+            "inverse-on-surface": "#313030",
+            "on-error-container": "#ffdad6",
             "on-background": "#e5e2e1",
             "surface-dim": "#131313",
-            "outline-variant": "#3b494b",
-            "on-secondary-container": "#480063",
-            "on-primary-fixed-variant": "#004f54",
-            "background": "#131313",
+            "on-tertiary-container": "#705d00",
             "surface-container-lowest": "#0e0e0e",
-            "inverse-on-surface": "#313030",
-            "on-primary-container": "#006970",
+            "on-tertiary-fixed": "#221b00",
+            "primary-fixed-dim": "#00dbe9",
+            "error": "#ffb4ab",
+            "on-primary-fixed": "#002022",
+            "background": "#131313",
             "inverse-primary": "#006970",
-            "on-secondary-fixed-variant": "#74009f",
-            "on-secondary-fixed": "#320047",
-            "on-error-container": "#ffdad6",
-            "surface": "#131313",
-            "primary-container": "#00f0ff",
-            "on-tertiary-fixed-variant": "#544600",
             "surface-container-high": "#2a2a2a",
+            "tertiary-fixed": "#ffe16d",
+            "on-primary-fixed-variant": "#004f54",
+            "tertiary-container": "#ffd700",
+            "on-secondary-fixed-variant": "#74009f",
+            "error-container": "#93000a",
+            "primary-container": "#00f0ff",
+            "on-secondary-container": "#480063",
+            "secondary-fixed": "#f8d8ff",
+            "outline-variant": "#3b494b",
+            "outline": "#849495",
+            "on-tertiary": "#3a3000",
+            "on-error": "#690005",
+            "tertiary-fixed-dim": "#e9c400",
+            "surface-tint": "#00dbe9",
+            "surface-bright": "#3a3939",
             "primary-fixed": "#7df4ff",
             "primary": "#dbfcff",
-            "surface-bright": "#3a3939",
-            "secondary-container": "#cf5cff",
-            "primary-fixed-dim": "#00dbe9",
-            "on-tertiary": "#3a3000"
+            "surface-container-low": "#1c1b1b",
+            "on-surface-variant": "#b9cacb",
+            "on-primary": "#00363a",
+            "surface-variant": "#353534",
+            "on-surface": "#e5e2e1",
+            "on-secondary": "#520071",
+            "on-primary-container": "#006970",
+            "surface-container-highest": "#353534",
+            "surface-container": "#201f1f",
+            "tertiary": "#fff5de"
           },
           "borderRadius": {
             "DEFAULT": "0.25rem",
@@ -65,31 +65,31 @@
             "full": "9999px"
           },
           "spacing": {
+            "section-gap": "64px",
             "container-margin-mobile": "24px",
             "unit": "8px",
             "gutter": "24px",
-            "container-margin-desktop": "80px",
-            "section-gap": "64px"
+            "container-margin-desktop": "80px"
           },
           "fontFamily": {
-            "headline-md": ["Playfair Display"],
             "label-caps": ["Inter"],
-            "headline-sm": ["Playfair Display"],
-            "mono-data": ["Inter"],
-            "display-lg": ["Playfair Display"],
             "body-md": ["Inter"],
+            "headline-md": ["Playfair Display"],
+            "mono-data": ["Inter"],
+            "headline-sm": ["Playfair Display"],
             "body-lg": ["Inter"],
-            "display-lg-mobile": ["Playfair Display"]
+            "display-lg-mobile": ["Playfair Display"],
+            "display-lg": ["Playfair Display"]
           },
           "fontSize": {
-            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
             "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
-            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-            "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
             "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
             "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
           }
         },
       },
@@ -98,26 +98,20 @@
 <style>
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px; /* Offset for top bar and spacing */
     }
-
     body {
+      margin: 0;
+      padding: 0;
       background-color: #131313;
       color: #e5e2e1;
-      overflow-x: hidden;
     }
 
     .glass-card {
-      background: rgba(18, 18, 18, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 0.5px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .glass-card:hover {
-      border-color: rgba(0, 219, 233, 0.3);
-      background: rgba(18, 18, 18, 0.9);
+      background: rgba(18, 18, 18, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .pulse-cyan {
@@ -131,23 +125,22 @@
     }
 
     .hotspot {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       background: #00dbe9;
       border-radius: 50%;
       position: absolute;
       cursor: pointer;
-      transition: transform 0.3s ease;
-      z-index: 10;
+      z-index: 20;
     }
 
     .hotspot::before {
       content: '';
       position: absolute;
-      inset: -4px;
-      border: 1px solid #00dbe9;
+      inset: -6px;
+      border: 1.5px solid #00dbe9;
       border-radius: 50%;
-      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
     @keyframes ping {
@@ -155,34 +148,38 @@
     }
 
     .sos-slider-track {
-      background: linear-gradient(to right, rgba(147, 0, 10, 0.1), rgba(147, 0, 10, 0.3));
+      background: linear-gradient(to right, rgba(147, 0, 10, 0.15), rgba(147, 0, 10, 0.35));
     }
 
-    .hide-scrollbar::-webkit-scrollbar { display: none; }
-    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
     .nav-link.active {
-      background-color: rgba(0, 240, 255, 0.15);
       color: #00dbe9;
-      font-weight: 700;
     }
     .nav-link.active span.material-symbols-outlined {
       font-variation-settings: 'FILL' 1;
-      transform: scale(1.1);
     }
     
-    section {
-      transition: opacity 0.5s ease-in-out;
+    .feature-section {
+      width: 100%;
+      opacity: 1;
+      padding-top: 64px;
+      padding-bottom: 64px;
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
     }
   </style>
 </head>
-<body class="font-body-md antialiased scroll-smooth">
+<body class="font-body-md antialiased">
 <!-- Immersive Background Shader -->
-<div class="fixed inset-0 z-0 pointer-events-none opacity-40">
-<canvas id="shader-canvas-ANIMATION_67" style="display:block;width:100%;height:100%"></canvas>
+<div class="fixed inset-0 z-0 pointer-events-none">
+<canvas id="shader-canvas-global" style="display:block;width:100%;height:100%" width="390" height="3831"></canvas>
 <script>
       (function() {
-        const canvas = document.getElementById('shader-canvas-ANIMATION_67');
+        const canvas = document.getElementById('shader-canvas-global');
         function syncSize() {
           const w = window.innerWidth;
           const h = window.innerHeight;
@@ -196,7 +193,7 @@
         const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
         if (!gl) return;
         const vs = `attribute vec2 a_position;varying vec2 v_texCoord;void main() {v_texCoord = a_position * 0.5 + 0.5;gl_Position = vec4(a_position, 0.0, 1.0);}`;
-        const fs = `precision highp float;uniform float u_time;uniform vec2 u_resolution;varying vec2 v_texCoord;void main() {vec2 uv = gl_FragCoord.xy / u_resolution.xy;float time = u_time * 0.15;vec2 p = -1.0 + 2.0 * uv;p.x *= u_resolution.x / u_resolution.y;float noise = sin(p.x * 2.0 + time) * cos(p.y * 2.0 - time);noise += 0.5 * sin(p.x * 4.0 - time * 1.2) * cos(p.y * 3.0 + time * 0.8);noise += 0.25 * sin(p.x * 8.0 + time * 0.5) * cos(p.y * 7.0 - time * 0.3);vec3 obsidian = vec3(0.074, 0.074, 0.074);vec3 auraCyan = vec3(0.0, 0.94, 1.0);vec3 templeGold = vec3(0.82, 0.67, 0.35);float layer1 = smoothstep(0.4, 0.8, 0.5 + 0.5 * sin(p.x * 1.5 + noise + time * 0.5));float layer2 = smoothstep(0.4, 0.8, 0.5 + 0.5 * cos(p.y * 1.8 - noise + time * 0.4));vec3 color = obsidian;color = mix(color, auraCyan, layer1 * 0.06);color = mix(color, templeGold, layer2 * 0.04);float d = length(p);color += auraCyan * (0.02 / (d + 0.5));float vignette = smoothstep(1.5, 0.5, length(p));color *= vignette;gl_FragColor = vec4(color, 1.0);}`;
+        const fs = `precision highp float;uniform float u_time;uniform vec2 u_resolution;varying vec2 v_texCoord;void main() {vec2 uv = gl_FragCoord.xy / u_resolution.xy;float time = u_time * 0.12;vec2 p = -1.0 + 2.0 * uv;p.x *= u_resolution.x / u_resolution.y;float noise = sin(p.x * 1.8 + time) * cos(p.y * 1.8 - time);noise += 0.4 * sin(p.x * 3.5 - time * 1.1) * cos(p.y * 2.5 + time * 0.9);vec3 obsidian = vec3(0.04, 0.04, 0.04);vec3 auraCyan = vec3(0.0, 0.85, 0.95);vec3 templeGold = vec3(0.75, 0.6, 0.3);float layer1 = smoothstep(0.4, 0.9, 0.5 + 0.5 * sin(p.x * 1.2 + noise + time * 0.4));float layer2 = smoothstep(0.4, 0.9, 0.5 + 0.5 * cos(p.y * 1.5 - noise + time * 0.3));vec3 color = obsidian;color = mix(color, auraCyan, layer1 * 0.08);color = mix(color, templeGold, layer2 * 0.05);float d = length(p);color += auraCyan * (0.015 / (d + 0.6));float vignette = smoothstep(1.8, 0.4, length(p));color *= vignette;gl_FragColor = vec4(color, 1.0);}`;
         function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
         const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
         const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
@@ -207,310 +204,237 @@
       })();
     </script>
 </div>
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-container-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-fixed-dim text-headline-sm" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<!-- Top Navigation Header -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-container-margin-desktop h-16 bg-surface/40 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-2xl" style="font-variation-settings: 'FILL' 1;">diamond</span>
 <h1 class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary-fixed-dim">AuraLink</h1>
 </div>
 </header>
-<main class="relative z-10 pt-24 pb-32 px-6 md:px-container-margin-desktop max-w-7xl mx-auto space-y-section-gap">
-<!-- Section: Twin (Regal Dashboard) -->
-<section class="scroll-mt-32 pt-8" id="twin">
-<div class="flex flex-col items-center mb-12 text-center">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Regal Dashboard</h2>
+<!-- Main Content Wrapper -->
+<main class="relative z-10 w-full px-6 md:px-container-margin-desktop max-w-5xl mx-auto space-y-12">
+<!-- Section: Twin (Digital Twin) -->
+<section class="feature-section" id="twin">
+<div class="flex flex-col items-center mb-8 text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-3">Regal Dashboard</h2>
 <div class="flex items-center gap-4 text-on-surface-variant font-label-caps text-label-caps tracking-widest uppercase">
-<span>Identity: User 1</span>
+<span class="">Identity: User 1</span>
 <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
-<span>Status: Secure</span>
+<span class="">Status: Secure</span>
 </div>
 </div>
-<div class="glass-card rounded-3xl p-8 relative min-h-[500px] overflow-hidden flex flex-col items-center justify-center">
-<div class="absolute top-6 left-8">
-<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-[0.2em]">Digital Twin Blueprint</span>
+<div class="glass-card rounded-[40px] p-8 md:p-12 relative flex-1 flex flex-col items-center justify-center mb-6 overflow-hidden">
+<div class="absolute top-8 left-10">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-[0.25em] text-[10px] opacity-70">Digital Twin Blueprint</span>
 </div>
-<div class="relative w-full max-w-lg aspect-square flex items-center justify-center">
-<img alt="AuraLink Smart Ring Schematic" class="w-full h-full object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/AP1WRLsDsW7DQqfEnouH692CdXtorcTFp86lE4j-_O7JxAYj9Wf-ii27SuHxs7zZDx7eYTGCdJ3xAVMBFNsEmsDTVEa-PeB8LE8Hmy04iRWo4NqNfwElbCYoxRQJ8Zo43u3VPJs8uCofVYam6eT7GVU59tKWVT8glqgJU-KxVDkjjiG2w_wVQarUobtwWxqcyaIKQEmBTVCPAyoxshOZMcrrr-x5SBO2KzIQ9fKa2UrwkAjbGmePovWyoxZrOg"/>
-<!-- Interactive Hotspots -->
+<div class="relative w-full max-w-[400px] aspect-square flex items-center justify-center">
+<!-- Main Ring Image -->
+<img alt="AuraLink Smart Ring Schematic" class="w-full h-full object-contain mix-blend-lighten pointer-events-none scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLsDsW7DQqfEnouH692CdXtorcTFp86lE4j-_O7JxAYj9Wf-ii27SuHxs7zZDx7eYTGCdJ3xAVMBFNsEmsDTVEa-PeB8LE8Hmy04iRWo4NqNfwElbCYoxRQJ8Zo43u3VPJs8uCofVYam6eT7GVU59tKWVT8glqgJU-KxVDkjjiG2w_wVQarUobtwWxqcyaIKQEmBTVCPAyoxshOZMcrrr-x5SBO2KzIQ9fKa2UrwkAjbGmePovWyoxZrOg">
+<!-- Interactive Hotspots & Technical Callouts -->
 <div class="hotspot group" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
-<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
-<span class="text-label-caps font-label-caps text-primary-fixed-dim">Biometric Core</span>
+<div class="absolute left-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded-lg border border-primary-fixed-dim/30 whitespace-nowrap z-30 pointer-events-none">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim">Biometric Core</span>
 </div>
 </div>
 <div class="hotspot group" style="top: 32%; right: 28%;">
-<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
-<span class="text-label-caps font-label-caps text-primary-fixed-dim">Encapsulated Antenna</span>
+<div class="absolute left-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded-lg border border-primary-fixed-dim/30 whitespace-nowrap z-30 pointer-events-none">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim">Encapsulated Antenna</span>
 </div>
 </div>
 <div class="hotspot group" style="bottom: 30%; left: 22%;">
-<div class="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded border border-primary-fixed-dim/30 whitespace-nowrap z-20 pointer-events-none">
-<span class="text-label-caps font-label-caps text-primary-fixed-dim">Shielding Layer</span>
+<div class="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:-translate-x-2 bg-surface-container-high px-3 py-1 rounded-lg border border-primary-fixed-dim/30 whitespace-nowrap z-30 pointer-events-none text-right">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim">Shielding Layer</span>
 </div>
 </div>
-</div>
-</div>
-<!-- Vital Harmony Sub-section -->
-<div class="glass-card rounded-3xl p-8 mt-12" id="vitals">
-<div class="flex justify-between items-center mb-10">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">pulse</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Vital Harmony</h3>
-</div>
-<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-widest bg-tertiary-container/10 px-3 py-1 rounded-full border border-tertiary-fixed-dim/20">Syncing Live</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-<!-- Heart Rate -->
-<div class="flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Heart Rate</p>
-<span class="material-symbols-outlined text-error pulse-cyan text-sm">favorite</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="font-headline-md text-headline-md text-on-surface">72</p>
-<p class="text-label-caps text-on-surface-variant">BPM</p>
-</div>
-<div class="h-16 flex items-end gap-1.5" id="heart-chart">
-<div class="flex-1 bg-error/30 rounded-full h-[40%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/40 rounded-full h-[60%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/30 rounded-full h-[45%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/60 rounded-full h-[80%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/30 rounded-full h-[50%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/40 rounded-full h-[65%] transition-all duration-1000"></div>
-<div class="flex-1 bg-error/50 rounded-full h-[70%] transition-all duration-1000"></div>
-</div>
-</div>
-<!-- Stress Index -->
-<div class="flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">Stress Index</p>
-<span class="material-symbols-outlined text-primary-fixed-dim text-sm">psychology</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="font-headline-md text-headline-md text-on-surface">Low</p>
-<p class="text-label-caps text-on-surface-variant">Normal</p>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full mt-auto relative">
-<div class="absolute left-0 top-0 h-full w-[14%] bg-primary-fixed-dim rounded-full shadow-[0_0_10px_#00dbe9]"></div>
-</div>
-<p class="text-mono-data text-on-surface-variant text-xs">Baseline: 14/100</p>
-</div>
-<!-- SpO2 -->
-<div class="flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<p class="text-on-surface-variant font-label-caps text-label-caps uppercase">SpO2</p>
-<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">air</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="font-headline-md text-headline-md text-on-surface">99</p>
-<p class="text-label-caps text-on-surface-variant">%</p>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full mt-auto relative">
-<div class="absolute left-0 top-0 h-full w-[99%] bg-tertiary-fixed-dim rounded-full shadow-[0_0_10px_#ffe16d]"></div>
-</div>
-<p class="text-mono-data text-on-surface-variant text-xs">Oxygen Saturation: Optimal</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Section: Stylist -->
-<section class="scroll-mt-32 pt-8" id="stylist">
-<div class="flex flex-col gap-6">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">flare</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">AI Stylist</h3>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-secondary/10 min-h-[300px]">
-<div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:bg-secondary-container/40 transition-all">
-<span class="material-symbols-outlined text-secondary-fixed-dim text-5xl">add_a_photo</span>
-</div>
-<span class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim tracking-widest text-lg">Upload Outfit</span>
-</button>
-<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-primary-fixed-dim/10 min-h-[300px]">
-<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 group-hover:bg-primary-container/40 transition-all">
-<span class="material-symbols-outlined text-primary-fixed-dim text-5xl">event_available</span>
-</div>
-<span class="font-label-caps text-label-caps uppercase text-primary-fixed-dim tracking-widest text-lg">Sync Calendar</span>
-</button>
-</div>
-</div>
-</section>
-<!-- Section: Guardian (Network) -->
-<section class="scroll-mt-32 pt-8" id="guardian">
-<div class="flex flex-col">
-<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">gpp_good</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Guardian Network</h3>
-</div>
-<div class="flex flex-wrap gap-4">
-<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-2xl border border-white/5">
-<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs text-on-surface-variant font-bold uppercase">G1</div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-on-surface">Guardian 1</span>
-<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-widest">Active</span>
-</div>
-</div>
-<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-2xl border border-white/5">
-<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs text-on-surface-variant font-bold uppercase">G2</div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-on-surface">Guardian 2</span>
-<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-widest">Active</span>
-</div>
-</div>
-<button class="w-10 h-10 rounded-full border-2 border-background bg-primary-container/30 flex items-center justify-center text-label-caps text-primary font-bold hover:bg-primary-container/50 transition-all">+</button>
-</div>
-</div>
-<div class="glass-card rounded-3xl overflow-hidden h-[500px] relative group border border-primary-fixed-dim/10 shadow-[0_0_30px_rgba(0,219,233,0.1)]">
-<!-- High-Fidelity Map Background -->
-<div class="absolute inset-0 bg-[#0e0e0e]">
-<div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, #3b494b 1px, transparent 0); background-size: 24px 24px;"></div>
-<img alt="Luxury Map Interface" class="w-full h-full object-cover grayscale brightness-[0.2] contrast-150 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV_OZ6U3U2RW6KTPk53eZarhYv6_yvHA0qJahGYZItt0kXkcL0dAQv9NYgHcbIxnpawqPIENUCtZcIug2RN2VOmakQSgfRJofRMxGOhxOBBnIwAlgCsqcg8AG_5RfFR-yuZj2o4J2nwDgisNnpEoguEuColdwyRVV6gkgUzNQ2sbQlugeMzHAlk6eI9HBLrEfTnzf8JtvOaqOWKazeaIkG6jpR4CHDMuoJW3VPpPxjuFZIzpXJOz8NYCnCeYx9fx4qHxu5SXSNoXE"/>
-</div>
-<!-- Secure Perimeter Visualization -->
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-96 h-96 rounded-full border border-primary-fixed-dim/20 bg-primary-fixed-dim/5 animate-[pulse_4s_infinite] flex items-center justify-center">
-<div class="w-72 h-72 rounded-full border border-primary-fixed-dim/10"></div>
-</div>
-</div>
-<!-- Glowing User Location Marker -->
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="relative">
-<span class="absolute -inset-8 bg-primary-fixed-dim/30 rounded-full animate-ping duration-1000"></span>
-<span class="absolute -inset-4 bg-primary-fixed-dim/40 rounded-full animate-pulse"></span>
-<div class="w-8 h-8 bg-primary-fixed-dim rounded-full relative shadow-[0_0_25px_#00dbe9] border-2 border-white/20"></div>
-</div>
-</div>
-<!-- Map Overlays -->
-<div class="absolute top-6 left-6">
-<div class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-fixed-dim text-base">my_location</span>
-<span class="text-label-caps font-label-caps text-on-surface text-[10px] tracking-widest">LIVE TRACKING</span>
-</div>
-</div>
-<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-<div class="px-5 py-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4 shadow-2xl">
-<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim pulse-cyan"></span>
-<div class="flex flex-col">
-<span class="text-[10px] text-on-surface-variant font-label-caps uppercase tracking-tighter">Current Sector</span>
-<span class="text-sm font-headline-sm text-on-surface">Bandra West • Mumbai</span>
-</div>
-</div>
-<div class="hidden sm:flex -space-x-3">
-<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G1</div>
-<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G2</div>
+<div class="hotspot group" style="top: 45%; right: 22%;">
+<div class="absolute left-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 bg-surface-container-high px-3 py-1 rounded-lg border border-primary-fixed-dim/30 whitespace-nowrap z-30 pointer-events-none">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim">Resonance Plate</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Section: Track (Safety) -->
-<section class="scroll-mt-32 pt-8 mb-12" id="track">
-<div class="flex items-center gap-3 mb-10">
+<!-- Section: Track (Security & SOS + Maps) -->
+<section class="feature-section" id="track">
+<div class="flex items-center gap-3 mb-8">
 <span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">location_on</span>
 <h3 class="font-headline-sm text-headline-sm text-primary">Security &amp; SOS</h3>
 </div>
-<div class="max-w-3xl mx-auto">
+<div class="w-full max-w-2xl mx-auto flex flex-col gap-8 h-full">
+<!-- Unified Safety Hub -->
 <div class="glass-card rounded-full p-2 h-20 flex items-center relative overflow-hidden sos-slider-track border border-error/20" id="sos-slider-container">
 <div class="absolute left-0 top-0 bottom-0 bg-error/20 w-0 pointer-events-none transition-all duration-75" id="sos-progress"></div>
-<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center cursor-grab active:cursor-grabbing z-20 shadow-2xl pulse-cyan" id="sos-handle">
+<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center cursor-grab active:cursor-grabbing z-20 shadow-xl pulse-cyan" id="sos-handle">
 <span class="material-symbols-outlined text-2xl font-bold">keyboard_double_arrow_right</span>
 </div>
 <div class="flex-1 text-center pointer-events-none pr-10">
 <span class="text-label-caps font-label-caps text-error tracking-[0.3em] uppercase text-[10px] font-bold">Slide for Silent SOS Protocol</span>
 </div>
 </div>
-<p class="text-center mt-8 text-on-surface-variant font-body-md max-w-lg mx-auto leading-relaxed text-sm">
-          Engagement of the SOS Protocol will notify all Guardians immediately and initiate high-fidelity audio/visual distress logging.
-        </p>
+<div class="glass-card rounded-[40px] overflow-hidden flex-1 relative group border border-primary-fixed-dim/10 min-h-[350px]">
+<div class="absolute inset-0 bg-[#0e0e0e]">
+<!-- Map Grid -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, #3b494b 1px, transparent 0); background-size: 32px 32px;"></div>
+<!-- Map Placeholder Image -->
+<img alt="Luxury Map Interface" class="w-full h-full object-cover grayscale brightness-[0.2] contrast-150 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV_OZ6U3U2RW6KTPk53eZarhYv6_yvHA0qJahGYZItt0kXkcL0dAQv9NYgHcbIxnpawqPIENUCtZcIug2RN2VOmakQSgfRJofRMxGOhxOBBnIwAlgCsqcg8AG_5RfFR-yuZj2o4J2nwDgisNnpEoguEuColdwyRVV6gkgUzNQ2sbQlugeMzHAlk6eI9HBLrEfTnzf8JtvOaqOWKazeaIkG6jpR4CHDMuoJW3VPpPxjuFZIzpXJOz8NYCnCeYx9fx4qHxu5SXSNoXE">
+</div>
+<!-- Tracking Overlays -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-72 h-72 rounded-full border border-primary-fixed-dim/20 bg-primary-fixed-dim/5 animate-[pulse_4s_infinite] flex items-center justify-center">
+<div class="w-48 h-48 rounded-full border border-primary-fixed-dim/10"></div>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<span class="absolute -inset-10 bg-primary-fixed-dim/20 rounded-full animate-ping duration-2000"></span>
+<span class="absolute -inset-6 bg-primary-fixed-dim/30 rounded-full animate-pulse"></span>
+<div class="w-5 h-5 bg-primary-fixed-dim rounded-full relative shadow-[0_0_30px_#00dbe9] border-2 border-white/30"></div>
+</div>
+</div>
+<div class="absolute top-6 left-6">
+<div class="px-4 py-2 bg-surface-container-lowest/80 backdrop-blur-xl rounded-2xl border border-white/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-base">my_location</span>
+<span class="text-label-caps font-label-caps text-on-surface text-[10px] tracking-[0.2em]">LIVE TRACKING ACTIVE</span>
+</div>
+</div>
+</div>
 </div>
 </section>
+<!-- Section: Stylist (AI Stylist) -->
+<section class="feature-section" id="stylist">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">flare</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">AI Stylist</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+<button class="glass-card rounded-[40px] p-10 flex flex-col items-center justify-center text-center group hover:scale-[1.01] hover:bg-white/[0.03] border-secondary/10">
+<div class="w-20 h-20 rounded-full bg-secondary-container/10 flex items-center justify-center mb-8 group-hover:bg-secondary-container/20 transition-all border border-secondary/20">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-4xl">add_a_photo</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim tracking-[0.3em] text-lg">Upload Outfit</span>
+<p class="mt-3 text-[11px] font-label-caps text-on-surface-variant/60 uppercase tracking-widest">Analyze wardrobe integration</p>
+</button>
+<button class="glass-card rounded-[40px] p-10 flex flex-col items-center justify-center text-center group hover:scale-[1.01] hover:bg-white/[0.03] border-primary-fixed-dim/10">
+<div class="w-20 h-20 rounded-full bg-primary-container/10 flex items-center justify-center mb-8 group-hover:bg-primary-container/20 transition-all border border-primary-fixed-dim/20">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl">event_available</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed-dim tracking-[0.3em] text-lg">Sync Calendar</span>
+<p class="mt-3 text-[11px] font-label-caps text-on-surface-variant/60 uppercase tracking-widest">Context-aware styling</p>
+</button>
+</div>
+<div class="w-full">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-sm text-lg text-primary">AI Recommendations</h4>
+<span class="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-widest">Awaiting Input</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 opacity-40 grayscale pointer-events-none">
+<div class="glass-card rounded-3xl p-6 border border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-headline-sm text-base text-on-surface">Temple Gold Occasion Ring</h5>
+<span class="text-[10px] font-label-caps text-tertiary-fixed-dim uppercase tracking-widest">Matches: Brocade Gold</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim">diamond</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">A bold statement piece designed to complement warm metallic textures and evening lighting.</p>
+<button class="mt-2 w-full py-2 rounded-lg border border-primary-fixed-dim/20 text-primary-fixed-dim font-label-caps text-[10px] uppercase tracking-widest hover:bg-primary-fixed-dim/10 transition-all">View Details</button>
+</div>
+<div class="glass-card rounded-3xl p-6 border border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-headline-sm text-base text-on-surface">Heritage Glow Band</h5>
+<span class="text-[10px] font-label-caps text-primary-fixed-dim uppercase tracking-widest">Event: Gala Evening</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim">auto_awesome</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Subtle elegance with integrated biometric sensors, perfect for high-profile social engagements.</p>
+<button class="mt-2 w-full py-2 rounded-lg border border-primary-fixed-dim/20 text-primary-fixed-dim font-label-caps text-[10px] uppercase tracking-widest hover:bg-primary-fixed-dim/10 transition-all">View Details</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Guardian (Guardian Network) -->
+<section class="feature-section" id="guardian">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">gpp_good</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Guardian Network</h3>
+</div>
+<div class="flex flex-col gap-4 w-full max-w-2xl mx-auto">
+<div class="flex items-center justify-between glass-card p-6 rounded-3xl border border-white/5">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-base text-on-surface-variant font-bold tracking-widest border border-white/10 shadow-inner">G1</div>
+<div class="flex flex-col">
+<span class="text-lg font-medium text-on-surface">Guardian 1</span>
+<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-[0.2em] mt-0.5">Encrypted Connection</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim/70 tracking-widest hidden sm:block">CONNECTED</span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim pulse-cyan"></span>
+</div>
+</div>
+<div class="flex items-center justify-between glass-card p-6 rounded-3xl border border-white/5">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-base text-on-surface-variant font-bold tracking-widest border border-white/10 shadow-inner">G2</div>
+<div class="flex flex-col">
+<span class="text-lg font-medium text-on-surface">Guardian 2</span>
+<span class="text-[10px] text-primary-fixed-dim font-label-caps uppercase tracking-[0.2em] mt-0.5">Encrypted Connection</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-label-caps text-primary-fixed-dim/70 tracking-widest hidden sm:block">CONNECTED</span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim pulse-cyan"></span>
+</div>
+</div>
+<button class="mt-8 flex items-center justify-center gap-4 w-full p-8 glass-card rounded-[32px] border-dashed border-primary-fixed-dim/20 text-primary-fixed-dim hover:bg-primary-container/5 transition-all group">
+<span class="material-symbols-outlined group-hover:scale-125 transition-transform">add_circle</span>
+<span class="text-label-caps font-label-caps uppercase tracking-[0.25em]">Add Trusted Guardian</span>
+</button>
+</div>
+<div class="h-32"></div> <!-- Spacer for footer navbar -->
+</section>
 </main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
-<a class="nav-link active flex flex-col items-center justify-center text-on-surface-variant rounded-2xl px-6 py-2.5 transition-all cursor-pointer" data-nav="twin" href="#twin">
-<span class="material-symbols-outlined">language</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Twin</span>
+<!-- High-Fidelity Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-4 bg-surface-container-lowest/70 backdrop-blur-2xl border-t border-white/10"><a class="nav-link active flex flex-col items-center justify-center text-on-surface-variant w-20 py-2 transition-all relative" href="#twin">
+<span class="material-symbols-outlined text-2xl">language</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px] tracking-widest">TWIN</span>
 </a>
-<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="stylist" href="#stylist">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform">auto_awesome</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Stylist</span>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant w-20 py-2 transition-all group" href="#track">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">location_on</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px] tracking-widest">TRACK</span>
 </a>
-<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="guardian" href="#guardian">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform">security</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Guardian</span>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant w-20 py-2 transition-all group" href="#stylist">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px] tracking-widest">STYLIST</span>
 </a>
-<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant transition-all group cursor-pointer px-6 py-2.5 rounded-2xl" data-nav="track" href="#track">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform">location_on</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Track</span>
-</a>
-</nav>
+<a class="nav-link flex flex-col items-center justify-center text-on-surface-variant w-20 py-2 transition-all group" href="#guardian">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">security</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px] tracking-widest">GUARDIAN</span>
+</a></nav>
 <script>
-    // Navigation Highlighting and Smooth Scrolling Logic
-    const sections = document.querySelectorAll('section');
+    // Navbar Active State Logic based on scroll position
     const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.feature-section');
 
-    // Smooth Scroll Helper with Regal Easing
-    function scrollToSection(id) {
-      const target = document.querySelector(id);
-      if (!target) return;
-      
-      const offset = 80; // Alignment offset
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = target.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+    window.addEventListener('scroll', () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
       });
-    }
 
-    // Attach click events to nav links
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        scrollToSection(targetId);
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
       });
     });
 
-    // Intersection Observer for highlighting nav items
-    const observerOptions = {
-      root: null,
-      rootMargin: '-10% 0px -70% 0px', // Trigger when section is near the top
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
-
-    // Heart Rate Pulse Animation Logic
-    setInterval(() => {
-      const heartChart = document.getElementById('heart-chart');
-      if (!heartChart) return;
-      const bars = heartChart.querySelectorAll('div');
-      bars.forEach(bar => {
-        const height = Math.floor(Math.random() * 50) + 30;
-        bar.style.height = `${height}%`;
-      });
-    }, 1000);
-
-    // SOS Slider Logic
+    // SOS Slider Logic (Maintained)
     const handle = document.getElementById('sos-handle');
     const container = document.getElementById('sos-slider-container');
     const progress = document.getElementById('sos-progress');
@@ -546,15 +470,12 @@
       progress.style.transition = 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
       handle.style.transform = 'translateX(0)';
       progress.style.width = '0';
-      setTimeout(() => {
-        progress.style.transition = 'none';
-      }, 500);
     };
 
     function triggerSOS() {
       if (!isDragging) return;
       isDragging = false;
-      alert('SILENT SOS PROTOCOL ENGAGED: Guardians notified. Real-time audio streaming active.');
+      alert('SILENT SOS PROTOCOL ENGAGED: Guardians notified. Real-time location & audio sharing active.');
       handle.style.transform = 'translateX(0)';
       progress.style.width = '0';
     }
@@ -568,4 +489,6 @@
       window.addEventListener('touchend', endDrag);
     }
   </script>
+
+
 </body></html>
