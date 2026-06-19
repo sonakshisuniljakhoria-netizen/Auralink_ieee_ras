@@ -571,6 +571,8 @@
         });
 
         const data = await response.json();
+        localStorage.setItem("activeIncidentId", data.databaseId);
+        console.log("Saved Incident ID:", data.databaseId);
 
         if (data.success) {
             alert("SOS sent successfully!");
