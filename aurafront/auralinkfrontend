@@ -551,13 +551,41 @@
       }, 500);
     };
 
-    function triggerSOS() {
-      if (!isDragging) return;
-      isDragging = false;
-      alert('SILENT SOS PROTOCOL ENGAGED: Guardians notified. Real-time audio streaming active.');
-      handle.style.transform = 'translateX(0)';
-      progress.style.width = '0';
+    async function triggerSOS() {
+    if (!isDragging) return;
+
+    isDragging = false;
+
+    console.log("SOS BUTTON CLICKED");
+
+    try {
+        const response = await fetch("https://b55rzx29-5000.inc1.devtunnels.ms/api/crisis", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                victimName: "Test Student",
+                coordinates: "12.9716,79.1594"
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("SOS sent successfully!");
+        } else {
+            alert("SOS failed.");
+        }
+
+    } catch (error) {
+        console.error("FULL ERROR:", error);
+        alert(error.message);
     }
+
+    handle.style.transform = 'translateX(0)';
+    progress.style.width = '0';
+}
 
     if (handle && container) {
       handle.addEventListener('mousedown', startDrag);
