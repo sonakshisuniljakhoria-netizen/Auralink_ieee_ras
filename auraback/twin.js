@@ -1,15 +1,13 @@
 const axios = require('axios');
 
-const ACTIVE_INCIDENT_ID = "6a32edf9834be282931a5193"; 
+const ACTIVE_INCIDENT_ID = " 6a3952ed7bfc20b3a89c3353"; 
 const BACKEND_URL = `http://localhost:5000/api/crisis/${ACTIVE_INCIDENT_ID}/location`;
 
 const simulatedWalkingRoute = [
-    "19.0600,72.8300",
-    "19.0615,72.8315",
-    "19.0630,72.8333",
-    "19.0645,72.8348",
-    "19.0660,72.8362",
-    "19.0675,72.8379"
+    "12.9716,79.1594",
+    "12.9725,79.1605",
+    "12.9735,79.1615",
+    "12.9742,79.1628"
 ];
 
 let currentStep = 0;
