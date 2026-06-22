@@ -15,7 +15,7 @@ const simulatedWalkingRoute = [
 let currentStep = 0;
 
 console.log
-console.log("💍 AURA SMART RING: AUTOMATED DIGITAL TWIN ACTIVE");
+console.log(" AURA SMART RING: AUTOMATED DIGITAL TWIN ACTIVE");
 
 const trackingInterval = setInterval(async () => {
     if (currentStep < simulatedWalkingRoute.length) {
