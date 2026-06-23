@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const ACTIVE_INCIDENT_ID = " 6a3952ed7bfc20b3a89c3353"; 
+const ACTIVE_INCIDENT_ID = "6a3a99e994569ddd35453f61"; 
 const BACKEND_URL = `http://localhost:5000/api/crisis/${ACTIVE_INCIDENT_ID}/location`;
 
 const simulatedWalkingRoute = [
