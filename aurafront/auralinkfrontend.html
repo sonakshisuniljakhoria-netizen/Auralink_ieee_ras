@@ -7,6 +7,12 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -175,6 +181,7 @@
       transition: opacity 0.5s ease-in-out;
     }
   </style>
+  
 </head>
 <body class="font-body-md antialiased scroll-smooth">
 <!-- Immersive Background Shader -->
@@ -361,48 +368,7 @@
 <button class="w-10 h-10 rounded-full border-2 border-background bg-primary-container/30 flex items-center justify-center text-label-caps text-primary font-bold hover:bg-primary-container/50 transition-all">+</button>
 </div>
 </div>
-<div class="glass-card rounded-3xl overflow-hidden h-[500px] relative group border border-primary-fixed-dim/10 shadow-[0_0_30px_rgba(0,219,233,0.1)]">
-<!-- High-Fidelity Map Background -->
-<div class="absolute inset-0 bg-[#0e0e0e]">
-<div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, #3b494b 1px, transparent 0); background-size: 24px 24px;"></div>
-<img alt="Luxury Map Interface" class="w-full h-full object-cover grayscale brightness-[0.2] contrast-150 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV_OZ6U3U2RW6KTPk53eZarhYv6_yvHA0qJahGYZItt0kXkcL0dAQv9NYgHcbIxnpawqPIENUCtZcIug2RN2VOmakQSgfRJofRMxGOhxOBBnIwAlgCsqcg8AG_5RfFR-yuZj2o4J2nwDgisNnpEoguEuColdwyRVV6gkgUzNQ2sbQlugeMzHAlk6eI9HBLrEfTnzf8JtvOaqOWKazeaIkG6jpR4CHDMuoJW3VPpPxjuFZIzpXJOz8NYCnCeYx9fx4qHxu5SXSNoXE"/>
-</div>
-<!-- Secure Perimeter Visualization -->
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-96 h-96 rounded-full border border-primary-fixed-dim/20 bg-primary-fixed-dim/5 animate-[pulse_4s_infinite] flex items-center justify-center">
-<div class="w-72 h-72 rounded-full border border-primary-fixed-dim/10"></div>
-</div>
-</div>
-<!-- Glowing User Location Marker -->
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="relative">
-<span class="absolute -inset-8 bg-primary-fixed-dim/30 rounded-full animate-ping duration-1000"></span>
-<span class="absolute -inset-4 bg-primary-fixed-dim/40 rounded-full animate-pulse"></span>
-<div class="w-8 h-8 bg-primary-fixed-dim rounded-full relative shadow-[0_0_25px_#00dbe9] border-2 border-white/20"></div>
-</div>
-</div>
-<!-- Map Overlays -->
-<div class="absolute top-6 left-6">
-<div class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-fixed-dim text-base">my_location</span>
-<span class="text-label-caps font-label-caps text-on-surface text-[10px] tracking-widest">LIVE TRACKING</span>
-</div>
-</div>
-<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-<div class="px-5 py-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4 shadow-2xl">
-<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim pulse-cyan"></span>
-<div class="flex flex-col">
-<span class="text-[10px] text-on-surface-variant font-label-caps uppercase tracking-tighter">Current Sector</span>
-<span class="text-sm font-headline-sm text-on-surface">Bandra West • Mumbai</span>
-</div>
-</div>
-<div class="hidden sm:flex -space-x-3">
-<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G1</div>
-<div class="w-10 h-10 rounded-full border-4 border-background bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface font-bold">G2</div>
-</div>
-</div>
-</div>
-</div>
+<div id="liveMap" class="glass-card rounded-3xl overflow-hidden h-[500px]"></div>
 </section>
 <!-- Section: Track (Safety) -->
 <section class="scroll-mt-32 pt-8 mb-12" id="track">
@@ -552,6 +518,9 @@
     };
 
     async function triggerSOS() {
+      console.log("TRIGGER SOS ENTERED");
+
+
     if (!isDragging) return;
 
     isDragging = false;
@@ -559,7 +528,8 @@
     console.log("SOS BUTTON CLICKED");
 
     try {
-        const response = await fetch("https://b55rzx29-5000.inc1.devtunnels.ms/api/crisis", {
+      
+        const response = await fetch("https://f3v9p3m6-5000.inc1.devtunnels.ms/api/crisis", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -597,5 +567,72 @@
       window.addEventListener('mouseup', endDrag);
       window.addEventListener('touchend', endDrag);
     }
+
+  // ===== LEAFLET LIVE TRACKING =====
+
+const map = L.map("liveMap").setView([12.9716, 79.1594], 15);
+
+L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution: "&copy; OpenStreetMap contributors"
+  }
+).addTo(map);
+
+const marker = L.marker([12.9716, 79.1594]).addTo(map);
+
+const trail = [];
+
+const polyline = L.polyline([], {
+  color: "#00dbe9",
+  weight: 4
+}).addTo(map);
+
+async function fetchCoordinates() {
+
+  const incidentId =
+    localStorage.getItem("activeIncidentId");
+
+  if (!incidentId) return;
+
+  try {
+
+    const response = await fetch(
+      `https://f3v9p3m6-5000.inc1.devtunnels.ms/api/crisis/${incidentId}`
+    );
+
+    const data = await response.json();
+
+    if (!data.success) return;
+
+    const points = data.coordinates.map(coord => {
+      const [lat, lng] = coord.split(",").map(Number);
+      return [lat, lng];
+    });
+
+    polyline.setLatLngs(points);
+
+    if (points.length > 0) {
+
+      const latest =
+        points[points.length - 1];
+
+      marker.setLatLng(latest);
+
+      map.panTo(latest);
+    }
+
+  } catch (err) {
+
+    console.error(err);
+
+  }
+
+}
+
+
+fetchCoordinates();
+
+setInterval(fetchCoordinates, 3000);
   </script>
 </body></html>
