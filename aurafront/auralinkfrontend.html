@@ -327,20 +327,57 @@
 <h3 class="font-headline-sm text-headline-sm text-primary">AI Stylist</h3>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-secondary/10 min-h-[300px]">
-<div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:bg-secondary-container/40 transition-all">
+<button 
+ id="uploadOutfitBtn"
+ class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-secondary/10 min-h-[300px]">
+
+ <div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:bg-secondary-container/40 transition-all">
 <span class="material-symbols-outlined text-secondary-fixed-dim text-5xl">add_a_photo</span>
 </div>
 <span class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim tracking-widest text-lg">Upload Outfit</span>
 </button>
-<button class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-primary-fixed-dim/10 min-h-[300px]">
+<button  
+id="syncCalendarBtn"
+ class="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center group hover:scale-[1.02] border-primary-fixed-dim/10 min-h-[300px]">
+
 <div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 group-hover:bg-primary-container/40 transition-all">
 <span class="material-symbols-outlined text-primary-fixed-dim text-5xl">event_available</span>
 </div>
 <span class="font-label-caps text-label-caps uppercase text-primary-fixed-dim tracking-widest text-lg">Sync Calendar</span>
 </button>
+<input
+    type="file"
+    id="outfitInput"
+    accept="image/*"
+    hidden
+/>
 </div>
 </div>
+
+  <!-- AI Recommendation Card -->
+<div
+    id="recommendationCard"
+    class="glass-card rounded-3xl p-8 mt-6 border border-primary-fixed-dim/20 hidden"
+>
+    <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-primary">
+            auto_awesome
+        </span>
+        <h3 class="text-headline-sm text-primary">
+            AI Recommendation
+        </h3>
+    </div>
+
+    <p
+        id="recommendationText"
+        class="text-body-md text-on-surface whitespace-pre-line"
+    >
+        No recommendation yet.
+
+        Upload an outfit or sync your calendar to get personalized styling suggestions.
+    </p>
+</div>
+
 </section>
 <!-- Section: Guardian (Network) -->
 <section class="scroll-mt-32 pt-8" id="guardian">
@@ -634,5 +671,134 @@ async function fetchCoordinates() {
 fetchCoordinates();
 
 setInterval(fetchCoordinates, 3000);
+
+const recommendationCard =
+    document.getElementById("recommendationCard");
+
+const recommendationText =
+    document.getElementById("recommendationText");
+
+function showRecommendation(message) {
+    recommendationCard.classList.remove("hidden");
+    recommendationText.textContent = message;
+}
+
+function showLoading(message) {
+    recommendationCard.classList.remove("hidden");
+    recommendationText.textContent = message;
+}
+
+const uploadBtn = document.getElementById("uploadOutfitBtn");
+const calendarBtn = document.getElementById("syncCalendarBtn");
+const outfitInput = document.getElementById("outfitInput");
+uploadBtn.addEventListener("click", () => {
+    outfitInput.click();
+});
+
+outfitInput.addEventListener("change", async () => {
+
+    const file = outfitInput.files[0];
+    if (!file) return;
+
+    showLoading("Uploading outfit...\n\nGenerating recommendation...");
+
+    const formData = new FormData();
+    formData.append("outfitImage", file);
+
+    try {
+
+        const response = await fetch(
+            "https://f3v9p3m6-5000.inc1.devtunnels.ms/api/stylist/upload",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        showRecommendation(
+`👔 Recommended Outfit
+
+📅 Event
+${data.detectedEvent}
+
+👕 Outfit
+${data.data.suggestedOutfit}
+
+⌚ Accessory
+${data.data.suggestedAccessory}
+
+💡 Reason
+${data.data.matchReason}`
+        );
+
+    } catch (err) {
+
+        console.error(err);
+        showRecommendation("Failed to generate recommendation.");
+
+    }
+
+});
+
+calendarBtn.addEventListener("click", async () => {
+
+    showLoading(
+        "Fetching calendar...\n\nGenerating outfit recommendation..."
+    );
+
+    try {
+
+        const response = await fetch(
+    "https://f3v9p3m6-5000.inc1.devtunnels.ms/api/stylist/sync-mock-calendar",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+);
+if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+}
+          const data = await response.json();
+
+console.log(data);
+
+const recommendation = data.data;
+
+showRecommendation(
+`👔 Recommended Outfit
+
+📅 Event
+${data.detectedEvent}
+
+👕 Outfit
+${recommendation.suggestedOutfit}
+
+⌚ Accessory
+${recommendation.suggestedAccessory}
+
+💡 Reason
+${recommendation.matchReason}`
+);
+    } catch (err) {
+
+        showRecommendation(
+            "Failed to generate recommendation."
+        );
+
+        console.error(err);
+
+    }
+
+});
   </script>
 </body></html>
